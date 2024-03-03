@@ -8,7 +8,11 @@
         Andrea Zanellato <redtide@gmail.com>
 */
 #include "cdemu.hpp"
+#include "exception.hpp"
 
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QDebug>
 #include <QFile>
 
 namespace {
@@ -58,12 +62,10 @@ auto CDEmu::getNextFreeDevice() const -> int
 {
     const int count = getDeviceCount();
 
-    for (int i = 0; i < count; ++i)
-    {
+    for (int i = 0; i < count; ++i) {
         if (!isLoaded(i))
             return i;
     }
-
     return -1;
 }
 
@@ -154,13 +156,13 @@ void CDEmu::removeDevice() const
 void CDEmu::onServiceRegistered(const QString& service)
 {
     if (service == ServiceName)
-        emit daemonChanged(true);
+        Q_EMIT daemonChanged(true);
 }
 
 void CDEmu::onServiceUnregistered(const QString& service)
 {
     if (service == ServiceName)
-        emit daemonChanged(false);
+        Q_EMIT daemonChanged(false);
 }
 
 void CDEmu::connectMethod(const QString& name, const char* slot)

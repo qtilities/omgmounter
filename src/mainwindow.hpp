@@ -57,4 +57,5 @@ private:
     const CDEmu&                    m_cdemu;
     QLabel*                         m_statusLabel = nullptr;
     StatusNotifierItem*             m_trayIcon    = nullptr;
+    QMenu*                          m_trayMenu    = nullptr;
 };

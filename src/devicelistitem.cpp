@@ -35,15 +35,12 @@ void DeviceListItem::setFileName(const QString& name)
 {
     m_label->setText(name);
 
-    if (name.isEmpty())
-    {
+    if (name.isEmpty()) {
         m_button->setIcon(QIcon::fromTheme("document-open"));
-        m_button->setToolTip(i18n("Select image file"));
-    }
-    else
-    {
+        m_button->setToolTip(tr("Select image file"));
+    } else {
         m_button->setIcon(QIcon::fromTheme("media-eject"));
-        m_button->setToolTip(i18n("Unmount current image"));
+        m_button->setToolTip(tr("Unmount current image"));
     }
 }
 
@@ -60,7 +57,7 @@ auto DeviceListItem::widget() const -> QWidget*
 void DeviceListItem::onButtonClicked()
 {
     if (m_label->text().isEmpty())
-        emit mountClicked(m_index);
+        Q_EMIT mountClicked(m_index);
     else
-        emit unmountClicked(m_index);
+        Q_EMIT unmountClicked(m_index);
 }

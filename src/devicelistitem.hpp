@@ -32,6 +32,7 @@ Q_SIGNALS:
 private Q_SLOTS:
     void onButtonClicked();
 
+private:
     int          m_index;
     QWidget*     m_widget;
     QLabel*      m_label;

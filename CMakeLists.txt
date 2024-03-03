@@ -17,6 +17,7 @@ set(PROJECT_TRANSLATION_TEST "it" CACHE STRING      "Country code of language to
 set(PROJECT_QT_VERSION 5 CACHE STRING "Qt version to use [default: 5]")
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 find_package(QT NAMES Qt${PROJECT_QT_VERSION})
 find_package(Qt${QT_VERSION_MAJOR} CONFIG REQUIRED DBus LinguistTools Widgets)
 find_package(Qtilitools REQUIRED)
@@ -31,8 +32,12 @@ set(PROJECT_SOURCES
     src/devicelistitem.hpp
     src/exception.cpp
     src/exception.hpp
+    src/dialogabout.hpp
+    src/dialogabout.cpp
+    src/dialogabout.ui
     src/mainwindow.cpp
     src/mainwindow.hpp
+    src/mainwindow.ui
     src/main.cpp
 )
 set(PROJECT_OTHER_FILES
@@ -76,9 +81,11 @@ target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Woverloaded-virtual)
 target_compile_definitions(${PROJECT_NAME} PRIVATE
     APPLICATION_DISPLAY_NAME="${PROJECT_NAME}"
     APPLICATION_NAME="${PROJECT_ID}"
+    APPLICATION_VERSION="${PROJECT_VERSION}"
     ORGANIZATION_DOMAIN="${PROJECT_ORGANIZATION_URL}"
     ORGANIZATION_NAME="${PROJECT_ORGANIZATION_NAME}"
     PROJECT_DATA_DIR="${PROJECT_DATA_DIR}"
+    PROJECT_DESCRIPTION="${PROJECT_DESCRIPTION}"
     PROJECT_TRANSLATION_TEST="${PROJECT_TRANSLATION_TEST}"
     PROJECT_TRANSLATION_TEST_ENABLED=${PROJECT_TRANSLATION_TEST_ENABLED}
 )

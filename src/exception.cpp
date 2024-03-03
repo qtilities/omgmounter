@@ -9,27 +9,59 @@
 */
 #include "exception.hpp"
 
+#include <QCoreApplication>
+
+namespace OMGMounter {
+/*
+    https://doc.qt.io/qt-6/i18n-source-translation.html#translate-non-qt-classes
+    https://stackoverflow.com/questions/4892575/qt-translate-strings-from-non-source-files
+*/
+class errorStrings
+{
+    Q_DECLARE_TR_FUNCTIONS(OMGMounter::errorStrings)
+
+public:
+    QString get(const char *s)
+    {
+        static const QStringList sl{
+            QT_TR_NOOP("The selected virtual device is in use."),
+            QT_TR_NOOP("The selected virtual device is not available."),
+            QT_TR_NOOP("All virtual devices are in use."),
+            QT_TR_NOOP("The file doesn't exist."),
+            QT_TR_NOOP("Unable to connect to the CDEmu daemon."),
+            QT_TR_NOOP("An unknown error occured.")
+        };
+        qsizetype i = sl.indexOf(s);
+        if (i >= 0)
+            return tr(sl.at(i).toStdString().c_str());
+
+        return QString(s);
+    }
+};
+} // namespace OMGMounter
+
 static auto getErrorString(Error error) -> QString
 {
+    OMGMounter::errorStrings strings;
     switch (error)
     {
     case Error::DeviceInUse:
-        return i18n("The selected virtual device is in use.");
+        return strings.get("The selected virtual device is in use.");
 
     case Error::DeviceNotAvailable:
-        return i18n("The selected virtual device is not available.");
+        return strings.get("The selected virtual device is not available.");
 
     case Error::NoFreeDevice:
-        return i18n("All virtual devices are in use.");
+        return strings.get("All virtual devices are in use.");
 
     case Error::FileNotFound:
-        return i18n("The file doesn't exist.");
+        return strings.get("The file doesn't exist.");
 
     case Error::DaemonNotRunning:
-        return i18n("Unable to connect to the CDEmu daemon.");
+        return strings.get("Unable to connect to the CDEmu daemon.");
 
     default:
-        return i18n("An unknown error occured.");
+        return strings.get("An unknown error occured.");
     }
 }
 

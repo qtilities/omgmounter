@@ -7,11 +7,11 @@
         Marcel Hasler    <mahasler@gmail.com> as KDE CDEmu Manager
         Andrea Zanellato <redtide@gmail.com>
 */
+#include "mainwindow.hpp"
+#include "ui_mainwindow.h"
+#include "dialogabout.hpp"
 #include "devicelistitem.hpp"
 #include "exception.hpp"
-#include "mainwindow.hpp"
-
-#include "ui_mainwindow.h"
 
 #include <QFileDialog>
 #include <QHeaderView>
@@ -31,9 +31,10 @@ namespace {
 }
 
 MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
-    : KMainWindow(parent),
-      m_ui(std::make_unique<Ui::MainWindow>()),
-      m_cdemu(cdemu)
+    : QMainWindow(parent)
+    , m_ui(std::make_unique<Ui::MainWindow>())
+    , m_cdemu(cdemu)
+    , m_trayMenu(new QMenu(this))
 {
     // Keep running in system tray if enabled
     setAttribute(Qt::WA_DeleteOnClose, false);
@@ -41,12 +42,24 @@ MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
     m_ui->setupUi(this);
 
     // Menus
-    m_ui->menuFile->addAction(KStandardAction::quit(qApp, SLOT(quit()), this));
+    QAction* quit = new QAction(QIcon::fromTheme("application-exit"), tr("&Quit"), m_ui->menuFile);
+    m_ui->menuFile->addAction(quit);
+    connect(quit, &QAction::triggered, qApp, &QApplication::exit);
+
+    QMenu* mnuHelp = new QMenu(tr("&Help"), this);
+    menuBar()->addMenu(mnuHelp);
+
+    QAction* about = new QAction(QIcon::fromTheme("help-about"), tr("&About..."), mnuHelp);
+    mnuHelp->addAction(about);
+    connect(about, &QAction::triggered, this, [this]{
+        Qtilities::DialogAbout about(this);
+        about.exec();
+    });
+
+    m_trayMenu->addMenu(mnuHelp);
+    m_trayMenu->addAction(quit);
 
     updateHistory();
-
-    m_helpMenu = new KHelpMenu(this);
-    menuBar()->addMenu(m_helpMenu->menu());
 
     // Tray icon
     QSettings settings;
@@ -63,7 +76,7 @@ MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
     m_ui->deviceList->header()->setSectionResizeMode(0, QHeaderView::Fixed);
     m_ui->deviceList->header()->setSectionResizeMode(1, QHeaderView::Stretch);
 
-    const QString header = i18n(m_ui->deviceList->headerItem()->text(0).toLocal8Bit()) + "xxx";
+    const QString header = tr(m_ui->deviceList->headerItem()->text(0).toLocal8Bit()) + "xxx";
     m_ui->deviceList->header()->resizeSection(0, QFontMetrics(font()).horizontalAdvance(header));
 
     // Device handling
@@ -80,16 +93,13 @@ MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
     m_statusLabel->setIndent(10);
     statusBar()->addWidget(m_statusLabel);
     onDaemonChanged(m_cdemu.isDaemonRunning());
-
-    // Remember window size, etc.
-    setAutoSaveSettings();
 }
 
 MainWindow::~MainWindow() = default;
 
 void MainWindow::closeEvent(QCloseEvent* event)
 {
-    KMainWindow::closeEvent(event);
+    QMainWindow::closeEvent(event);
 
     if (!m_trayIcon)
         qApp->quit();
@@ -101,13 +111,12 @@ void MainWindow::onDaemonChanged(bool running)
 
     m_ui->centralWidget->setEnabled(running);
 
-    if (running)
-    {
+    if (running) {
         updateDeviceList();
-        m_statusLabel->setText(i18n("CDEmu daemon is running."));
+        m_statusLabel->setText(tr("CDEmu daemon is running."));
+    } else {
+        m_statusLabel->setText(tr("CDEmu daemon not running."));
     }
-    else
-        m_statusLabel->setText(i18n("CDEmu daemon not running."));
 }
 
 void MainWindow::onDeviceChanged(int index)
@@ -147,7 +156,7 @@ void MainWindow::mount(int index)
     QString path = settings.value(LastFilePathKey, QDir::homePath()).toString();
 
     const QString filename =
-            QFileDialog::getOpenFileName(this, i18n("Select an image file"), path, FileTypes);
+            QFileDialog::getOpenFileName(this, tr("Select an image file"), path, FileTypes);
 
     if (filename.isEmpty())
         return;
@@ -160,7 +169,9 @@ void MainWindow::mount(int index)
         appendHistory(filename);
     }
     catch (const Exception& e) {
-        MessageBox::error(e.what());
+        QMessageBox mb;
+        mb.setText(e.what());
+        mb.exec();
     }
 }
 
@@ -170,7 +181,9 @@ void MainWindow::unmount(int index)
         m_cdemu.unmount(index);
     }
     catch (const Exception& e) {
-        MessageBox::error(e.what());
+        QMessageBox mb;
+        mb.setText(e.what());
+        mb.exec();
     }
 }
 
@@ -187,7 +200,9 @@ void MainWindow::mountFromHistory()
         appendHistory(filename);
     }
     catch (const Exception& e) {
-        MessageBox::error(e.what());
+        QMessageBox mb;
+        mb.setText(e.what());
+        mb.exec();
     }
 }
 
@@ -205,7 +220,9 @@ void MainWindow::addDevice()
         m_cdemu.addDevice();
     }
     catch (const Exception& e) {
-        MessageBox::error(e.what());
+        QMessageBox mb;
+        mb.setText(e.what());
+        mb.exec();
     }
 }
 
@@ -215,28 +232,27 @@ void MainWindow::removeDevice()
         m_cdemu.removeDevice();
     }
     catch (const Exception& e) {
-        MessageBox::error(e.what());
+        QMessageBox mb;
+        mb.setText(e.what());
+        mb.exec();
     }
 }
 
 void MainWindow::setTrayIconVisible(bool visible)
 {
-    Q_ASSERT(m_helpMenu != nullptr);
+    Q_ASSERT(m_trayMenu != nullptr);
 
-    if (visible)
-    {
-        if (!m_trayIcon)
-        {
-            m_trayIcon = new KStatusNotifierItem(this);
+    if (visible) {
+        if (!m_trayIcon) {
+            m_trayIcon = new StatusNotifierItem(qApp->applicationName(), this);
             m_trayIcon->setIconByName("media-optical");
-            m_trayIcon->setCategory(KStatusNotifierItem::ApplicationStatus);
-            m_trayIcon->setStatus(KStatusNotifierItem::Active);
-            m_trayIcon->setToolTip("media-optical", "KDE CDEmu Manager", "");
-            m_trayIcon->contextMenu()->addMenu(m_helpMenu->menu());
+            m_trayIcon->setCategory(StatusNotifierItem::ApplicationStatus);
+            m_trayIcon->setStatus(StatusNotifierItem::Active);
+            m_trayIcon->setToolTipIconByName("media-optical");
+            m_trayIcon->setToolTipTitle(qApp->applicationDisplayName());
+            m_trayIcon->setContextMenu(m_trayMenu);
         }
-    }
-    else
-    {
+    } else {
         delete m_trayIcon;
         m_trayIcon = nullptr;
     }
@@ -289,10 +305,9 @@ void MainWindow::updateHistory()
         action->setData(history.at(i));
         connect(action, SIGNAL(triggered(bool)), this, SLOT(mountFromHistory()));
     }
-
     m_ui->menuHistory->addSeparator();
 
-    QAction* action = m_ui->menuHistory->addAction(i18n("Clear History"));
+    QAction* action = m_ui->menuHistory->addAction(tr("Clear History"));
     action->setIcon(QIcon::fromTheme("edit-clear-history"));
     action->setEnabled(!history.isEmpty());
     connect(action, SIGNAL(triggered(bool)), this, SLOT(clearHistory()));

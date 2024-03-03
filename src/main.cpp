@@ -58,39 +58,25 @@ auto main(int argc, char* argv[]) -> int
 {
     QApplication app(argc, argv);
     app.setWindowIcon(QIcon::fromTheme("media-optical"));
-
-    KLocalizedString::setApplicationDomain("kde_cdemu");
-
-    KAboutData aboutData(QStringLiteral("kde_cdemu"), i18n("KDE CDEmu Manager"),
-                         QStringLiteral(KDE_CDEMU_VERSION), i18n("A KDE Frontend to CDEmu."),
-                         KAboutLicense::GPL_V3, i18n("Copyright (c) 2009-2023 Marcel Hasler"));
-
-    aboutData.addAuthor(i18n("Marcel Hasler"), i18n("Author and Maintainer"),
-                        QStringLiteral("mahasler@gmail.com"));
-
-    KAboutData::setApplicationData(aboutData);
-
-    app.setApplicationName(aboutData.componentName());
-    app.setApplicationDisplayName(aboutData.displayName());
-    app.setApplicationVersion(aboutData.version());
+    app.setApplicationName(APPLICATION_NAME);
+    app.setApplicationDisplayName(APPLICATION_DISPLAY_NAME);
+    app.setApplicationVersion(APPLICATION_VERSION);
 
     QCommandLineParser parser;
+    parser.setApplicationDescription(PROJECT_DESCRIPTION);
+    parser.addHelpOption();
+    parser.addVersionOption();
 
-    aboutData.setupCommandLine(&parser);
-
-    parser.setApplicationDescription(aboutData.shortDescription());
-
-    QCommandLineOption mountOption("mount", i18n("Mount an image."), i18n("file"));
+    QCommandLineOption mountOption("mount", QObject::tr("Mount an image."), QObject::tr("file"));
     parser.addOption(mountOption);
 
-    QCommandLineOption unmountOption("unmount", i18n("Unmount an image."), i18n("device number"));
+    QCommandLineOption unmountOption("unmount", QObject::tr("Unmount an image."), QObject::tr("device number"));
     parser.addOption(unmountOption);
 
-    QCommandLineOption statusOption("status", i18n("Show information about devices."));
+    QCommandLineOption statusOption("status", QObject::tr("Show information about devices."));
     parser.addOption(statusOption);
 
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     try {
         CDEmu cdemu;
@@ -104,7 +90,7 @@ auto main(int argc, char* argv[]) -> int
         else
         {
             // Allow only one application instance
-            const KDBusService service(KDBusService::Unique);
+            //TODO: const KDBusService service(KDBusService::Unique);
 
             MainWindow window(cdemu);
             window.show();
@@ -114,9 +100,10 @@ auto main(int argc, char* argv[]) -> int
     }
     catch (const Exception& e)
     {
-        MessageBox::error(e.what());
+        QMessageBox mb;
+        mb.setText(e.what());
+        mb.exec();
         return -1;
     }
-
     return 0;
 }
