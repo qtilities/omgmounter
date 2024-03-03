@@ -1,0 +1,75 @@
+name: Build
+on:
+  push:
+    branches:
+    - '*'
+    tags:
+    - '[0-9]*'
+  pull_request:
+    branches:
+    - '*'
+defaults:
+  run:
+    shell: bash
+env:
+  build_type: Release
+jobs:
+  linux:
+    name: Linux
+    if: false # disabled: need to package libdbusmenu-qtilities and libstatusnotifieritem-qt, cdemu for Ubuntu?
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        qt_version: [5, 6]
+        config:
+        - { name: "GCC", cc: gcc, cxx: g++ }
+        - { name: "clang", cc: clang, cxx: clang++ }
+    env:
+      cc:  ${{ matrix.config.cc }}
+      cxx: ${{ matrix.config.cxx }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Checkout Qtilitools
+      uses: actions/checkout@v3
+      with:
+        repository: qtilities/qtilitools
+        path: qtilitools
+
+    - name: Update Packages
+      run: sudo apt-get update
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get install doxygen \
+        ${{ matrix.qt_version == 5
+        && 'qtbase5-dev qttools5-dev'
+        || 'qt6-base-dev libgl1-mesa-dev qt6-l10n-tools qt6-tools-dev qt6-tools-dev-tools'
+        }}
+
+    - name: Install Qtilitools
+      working-directory: ${{ github.workspace }}/qtilitools
+      run: |
+        options=(
+          -D CMAKE_INSTALL_PREFIX="/usr"
+          -D CMAKE_BUILD_TYPE=${{ env.build_type }}
+          -B build
+        )
+        cmake ${options[@]}
+        sudo cmake --install build
+
+    - name: Configure
+      run: |
+        options=(
+          -D CMAKE_INSTALL_PREFIX="/usr"
+          -D CMAKE_BUILD_TYPE=${{ env.build_type }}
+          -D PROJECT_QT_VERSION=${{ matrix.qt_version }}
+          -B build
+        )
+        cmake ${options[@]}
+
+    - name: Build
+      run: cmake --build build --verbose
