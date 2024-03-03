@@ -1,36 +1,22 @@
-/****************************************************************************
- *                                                                          *
- *   This file is part of KDE CDEmu Manager.                                *
- *                                                                          *
- *   Copyright (C) 2009-2023 by Marcel Hasler <mahasler@gmail.com>          *
- *                                                                          *
- *   This program is free software; you can redistribute it and/or modify   *
- *   it under the terms of the GNU General Public License as published by   *
- *   the Free Software Foundation, either version 3 of the License, or      *
- *   (at your option) any later version.                                    *
- *                                                                          *
- *   This program is distributed in the hope that it will be useful,        *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of         *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the           *
- *   GNU General Public License for more details.                           *
- *                                                                          *
- *   You should have received a copy of the GNU General Public License      *
- *   along with this program. If not, see <http://www.gnu.org/licenses/>.   *
- *                                                                          *
- ****************************************************************************/
+/*
+    SPDX-FileCopyrightText:  2009-2023 Marcel Hasler, 2024 Qtilities team
+    SPDX-License-Identifier: GPL-3.0-only
 
-#include "devicelistitem.h"
-#include "mainwindow.h"
-#include "messagebox.h"
+    This file is part of OMGMounter application.
+    Authors:
+        Marcel Hasler    <mahasler@gmail.com> as KDE CDEmu Manager
+        Andrea Zanellato <redtide@gmail.com>
+*/
+#include "devicelistitem.hpp"
+#include "exception.hpp"
+#include "mainwindow.hpp"
 
 #include "ui_mainwindow.h"
 
-#include <KStandardAction>
-
 #include <QFileDialog>
 #include <QHeaderView>
-
-// ---------------------------------------------------------------------------------------------- //
+#include <QMessageBox>
+#include <QSettings>
 
 namespace {
     constexpr const char* FileTypes = "Images (*.mds *.mdx *.b5t *.b6t *.ccd *.sub *.img *.cue "
@@ -43,8 +29,6 @@ namespace {
     constexpr const char* ShowTrayIconKey = "showTrayIcon";
     constexpr const char* LastFilePathKey = "lastFilePath";
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
     : KMainWindow(parent),
@@ -101,11 +85,7 @@ MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
     setAutoSaveSettings();
 }
 
-// ---------------------------------------------------------------------------------------------- //
-
 MainWindow::~MainWindow() = default;
-
-// ---------------------------------------------------------------------------------------------- //
 
 void MainWindow::closeEvent(QCloseEvent* event)
 {
@@ -114,8 +94,6 @@ void MainWindow::closeEvent(QCloseEvent* event)
     if (!m_trayIcon)
         qApp->quit();
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 void MainWindow::onDaemonChanged(bool running)
 {
@@ -132,8 +110,6 @@ void MainWindow::onDaemonChanged(bool running)
         m_statusLabel->setText(i18n("CDEmu daemon not running."));
 }
 
-// ---------------------------------------------------------------------------------------------- //
-
 void MainWindow::onDeviceChanged(int index)
 {
     // CDEmu emits "DeviceStatusChanged" before "DeviceRemoved" if device was loaded
@@ -142,8 +118,6 @@ void MainWindow::onDeviceChanged(int index)
     if (index < m_cdemu.getDeviceCount() && item)
         item->setFileName(m_cdemu.getFileName(index));
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 void MainWindow::updateDeviceList()
 {
@@ -166,8 +140,6 @@ void MainWindow::updateDeviceList()
 
     m_ui->removeDevice->setEnabled(m_ui->deviceList->topLevelItemCount() > 0);
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 void MainWindow::mount(int index)
 {
@@ -192,8 +164,6 @@ void MainWindow::mount(int index)
     }
 }
 
-// ---------------------------------------------------------------------------------------------- //
-
 void MainWindow::unmount(int index)
 {
     try {
@@ -203,8 +173,6 @@ void MainWindow::unmount(int index)
         MessageBox::error(e.what());
     }
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 void MainWindow::mountFromHistory()
 {
@@ -223,8 +191,6 @@ void MainWindow::mountFromHistory()
     }
 }
 
-// ---------------------------------------------------------------------------------------------- //
-
 void MainWindow::clearHistory()
 {
     QSettings settings;
@@ -232,8 +198,6 @@ void MainWindow::clearHistory()
 
     updateHistory();
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 void MainWindow::addDevice()
 {
@@ -245,8 +209,6 @@ void MainWindow::addDevice()
     }
 }
 
-// ---------------------------------------------------------------------------------------------- //
-
 void MainWindow::removeDevice()
 {
     try {
@@ -256,8 +218,6 @@ void MainWindow::removeDevice()
         MessageBox::error(e.what());
     }
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 void MainWindow::setTrayIconVisible(bool visible)
 {
@@ -285,8 +245,6 @@ void MainWindow::setTrayIconVisible(bool visible)
     settings.setValue(ShowTrayIconKey, visible);
 }
 
-// ---------------------------------------------------------------------------------------------- //
-
 void MainWindow::appendHistory(const QString& filename)
 {
     QSettings settings;
@@ -299,8 +257,6 @@ void MainWindow::appendHistory(const QString& filename)
 
     updateHistory();
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 void MainWindow::updateHistory()
 {
@@ -341,5 +297,3 @@ void MainWindow::updateHistory()
     action->setEnabled(!history.isEmpty());
     connect(action, SIGNAL(triggered(bool)), this, SLOT(clearHistory()));
 }
-
-// ---------------------------------------------------------------------------------------------- //

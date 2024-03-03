@@ -1,33 +1,19 @@
-/****************************************************************************
- *                                                                          *
- *   This file is part of KDE CDEmu Manager.                                *
- *                                                                          *
- *   Copyright (C) 2009-2023 by Marcel Hasler <mahasler@gmail.com>          *
- *                                                                          *
- *   This program is free software; you can redistribute it and/or modify   *
- *   it under the terms of the GNU General Public License as published by   *
- *   the Free Software Foundation, either version 3 of the License, or      *
- *   (at your option) any later version.                                    *
- *                                                                          *
- *   This program is distributed in the hope that it will be useful,        *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of         *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the           *
- *   GNU General Public License for more details.                           *
- *                                                                          *
- *   You should have received a copy of the GNU General Public License      *
- *   along with this program. If not, see <http://www.gnu.org/licenses/>.   *
- *                                                                          *
- ****************************************************************************/
+/*
+    SPDX-FileCopyrightText:  2009-2023 Marcel Hasler, 2024 Qtilities team
+    SPDX-License-Identifier: GPL-3.0-only
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+    This file is part of OMGMounter application.
+    Authors:
+        Marcel Hasler    <mahasler@gmail.com> as KDE CDEmu Manager
+        Andrea Zanellato <redtide@gmail.com>
+*/
+#pragma once
 
-#include "cdemu.h"
+#include "cdemu.hpp"
 
-#include <KHelpMenu>
-#include <KMainWindow>
-#include <KStatusNotifierItem>
+#include <StatusNotifierItemQt5/statusnotifieritem.h>
 
+#include <QMainWindow>
 #include <QLabel>
 
 #include <memory>
@@ -36,7 +22,7 @@ namespace Ui {
     class MainWindow;
 }
 
-class MainWindow : public KMainWindow
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
@@ -44,7 +30,7 @@ public:
     MainWindow(const CDEmu& cdemu, QWidget* parent = nullptr);
     ~MainWindow() override;
 
-private slots:
+private Q_SLOTS:
     void onDaemonChanged(bool);
     void onDeviceChanged(int index);
 
@@ -67,15 +53,8 @@ private:
     void appendHistory(const QString& filename);
     void updateHistory();
 
-private:
     std::unique_ptr<Ui::MainWindow> m_ui;
-
-    const CDEmu& m_cdemu;
-
-    QLabel* m_statusLabel = nullptr;
-
-    KHelpMenu* m_helpMenu = nullptr;
-    KStatusNotifierItem* m_trayIcon = nullptr;
+    const CDEmu&                    m_cdemu;
+    QLabel*                         m_statusLabel = nullptr;
+    StatusNotifierItem*             m_trayIcon    = nullptr;
 };
-
-#endif // MAINWINDOW_H

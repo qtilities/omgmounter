@@ -1,38 +1,21 @@
-/****************************************************************************
- *                                                                          *
- *   This file is part of KDE CDEmu Manager.                                *
- *                                                                          *
- *   Copyright (C) 2009-2023 by Marcel Hasler <mahasler@gmail.com>          *
- *                                                                          *
- *   This program is free software; you can redistribute it and/or modify   *
- *   it under the terms of the GNU General Public License as published by   *
- *   the Free Software Foundation, either version 3 of the License, or      *
- *   (at your option) any later version.                                    *
- *                                                                          *
- *   This program is distributed in the hope that it will be useful,        *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of         *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the           *
- *   GNU General Public License for more details.                           *
- *                                                                          *
- *   You should have received a copy of the GNU General Public License      *
- *   along with this program. If not, see <http://www.gnu.org/licenses/>.   *
- *                                                                          *
- ****************************************************************************/
+/*
+    SPDX-FileCopyrightText:  2009-2023 Marcel Hasler, 2024 Qtilities team
+    SPDX-License-Identifier: GPL-3.0-only
 
-#include <KAboutData>
-#include <KDBusService>
-#include <KLocalizedString>
-
+    This file is part of OMGMounter application.
+    Authors:
+        Marcel Hasler    <mahasler@gmail.com> as KDE CDEmu Manager
+        Andrea Zanellato <redtide@gmail.com>
+*/
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QDir>
+#include <QMessageBox>
 #include <QTextStream>
 
-#include "cdemu.h"
-#include "kdecdemuversion.h"
-#include "mainwindow.h"
-#include "messagebox.h"
-
-// ---------------------------------------------------------------------------------------------- //
+#include "cdemu.hpp"
+#include "exception.hpp"
+#include "mainwindow.hpp"
 
 static void mountImage(const CDEmu& cdemu, const QString& filename)
 {
@@ -44,14 +27,10 @@ static void mountImage(const CDEmu& cdemu, const QString& filename)
     cdemu.mount(QDir().absoluteFilePath(filename), index);
 }
 
-// ---------------------------------------------------------------------------------------------- //
-
 static void unmountImage(const CDEmu& cdemu, int index)
 {
     cdemu.unmount(index);
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 static void printStatus(const CDEmu& cdemu)
 {
@@ -74,8 +53,6 @@ static void printStatus(const CDEmu& cdemu)
         out << Qt::endl;
     }
 }
-
-// ---------------------------------------------------------------------------------------------- //
 
 auto main(int argc, char* argv[]) -> int
 {
@@ -143,5 +120,3 @@ auto main(int argc, char* argv[]) -> int
 
     return 0;
 }
-
-// ---------------------------------------------------------------------------------------------- //
