@@ -29,7 +29,7 @@ public:
             QT_TR_NOOP("All virtual devices are in use."),
             QT_TR_NOOP("The file doesn't exist."),
             QT_TR_NOOP("Unable to connect to the CDEmu daemon."),
-            QT_TR_NOOP("An unknown error occured.")
+            QT_TR_NOOP("An unknown error occurred.")
         };
         qsizetype i = sl.indexOf(s);
         if (i >= 0)
@@ -61,7 +61,7 @@ static auto getErrorString(Error error) -> QString
         return strings.get("Unable to connect to the CDEmu daemon.");
 
     default:
-        return strings.get("An unknown error occured.");
+        return strings.get("An unknown error occurred.");
     }
 }
 
