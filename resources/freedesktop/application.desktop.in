@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Exec=@PROJECT_ID@
-Icon=@PROJECT_ID@
+Icon=media-optical
 Categories=@PROJECT_CATEGORIES@;
-
+#TODO: equivalent of KDE' X-DBUS-StartupType=Unique ?
