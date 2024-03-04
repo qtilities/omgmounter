@@ -25,9 +25,11 @@ namespace {
                                                   "*.gbi *.daa *.isz *.xz)";
     constexpr int MaxHistorySize = 10;
 
-    constexpr const char* HistoryKey = "history";
-    constexpr const char* ShowTrayIconKey = "showTrayIcon";
-    constexpr const char* LastFilePathKey = "lastFilePath";
+    constexpr const char* HistoryKey      = "History";
+    constexpr const char* LastFilePathKey = "LastFilePath";
+    constexpr const char* ShowTrayIconKey = "ShowTrayIcon";
+    constexpr const char* SizeKey         = "Size";
+    constexpr const char* PositionKey     = "Position";
 }
 
 MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
@@ -61,9 +63,21 @@ MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
 
     updateHistory();
 
-    // Tray icon
+    // Settings
     QSettings settings;
 
+    // TODO: probably not working on Wayland
+    const QPoint windowPos  = settings.value(PositionKey, QPoint(200, 200)).toPoint();
+    const QSize  windowSize = settings.value(SizeKey, QSize(480, 320)).toSize();
+    move(windowPos);
+    resize(windowSize);
+    connect(qApp, &QApplication::aboutToQuit, this, [this]() {
+        QSettings settings;
+        settings.setValue(PositionKey, pos());
+        settings.setValue(SizeKey, size());
+    });
+
+    // Tray icon
     const bool showTrayIcon = settings.value(ShowTrayIconKey, true).toBool();
     setTrayIconVisible(showTrayIcon);
 

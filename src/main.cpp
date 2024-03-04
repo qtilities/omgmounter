@@ -60,6 +60,8 @@ auto main(int argc, char* argv[]) -> int
     app.setWindowIcon(QIcon::fromTheme("media-optical"));
     app.setApplicationName(APPLICATION_NAME);
     app.setApplicationDisplayName(APPLICATION_DISPLAY_NAME);
+    app.setOrganizationName(ORGANIZATION_NAME);
+    app.setOrganizationDomain(ORGANIZATION_DOMAIN);
     app.setApplicationVersion(APPLICATION_VERSION);
 
     QCommandLineParser parser;
