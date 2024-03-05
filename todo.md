@@ -4,3 +4,4 @@
 // Allow only one application instance
 const KDBusService service(KDBusService::Unique);
 ```
+- command line help system strings are not translated
