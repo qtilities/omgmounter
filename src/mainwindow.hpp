@@ -50,6 +50,8 @@ private Q_SLOTS:
 private:
     void closeEvent(QCloseEvent* event) override;
 
+    void onActivateRequested(const QPoint&);
+
     void appendHistory(const QString& filename);
     void updateHistory();
 

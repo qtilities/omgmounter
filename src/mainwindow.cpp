@@ -102,6 +102,8 @@ MainWindow::MainWindow(const CDEmu& cdemu, QWidget* parent)
     connect(&m_cdemu, SIGNAL(deviceChanged(int)), this, SLOT(onDeviceChanged(int)));
     connect(&m_cdemu, SIGNAL(daemonChanged(bool)), this, SLOT(onDaemonChanged(bool)));
 
+    connect(m_trayIcon, &StatusNotifierItem::activateRequested, this, &MainWindow::onActivateRequested);
+
     // Status bar
     m_statusLabel = new QLabel(this);
     m_statusLabel->setIndent(10);
@@ -117,6 +119,17 @@ void MainWindow::closeEvent(QCloseEvent* event)
 
     if (!m_trayIcon)
         qApp->quit();
+}
+
+void MainWindow::onActivateRequested(const QPoint&)
+{
+    if (m_trayIcon->status() == StatusNotifierItem::SNIStatus::Active) {
+        hide();
+        m_trayIcon->setStatus(StatusNotifierItem::SNIStatus::Passive);
+    } else {
+        show();
+        m_trayIcon->setStatus(StatusNotifierItem::SNIStatus::Active);
+    }
 }
 
 void MainWindow::onDaemonChanged(bool running)
@@ -260,8 +273,8 @@ void MainWindow::setTrayIconVisible(bool visible)
         if (!m_trayIcon) {
             m_trayIcon = new StatusNotifierItem(qApp->applicationName(), this);
             m_trayIcon->setIconByName("media-optical");
-            m_trayIcon->setCategory(StatusNotifierItem::ApplicationStatus);
-            m_trayIcon->setStatus(StatusNotifierItem::Active);
+            m_trayIcon->setCategory(StatusNotifierItem::SNICategory::ApplicationStatus);
+            m_trayIcon->setStatus(StatusNotifierItem::SNIStatus::Active);
             m_trayIcon->setToolTipIconByName("media-optical");
             m_trayIcon->setToolTipTitle(qApp->applicationDisplayName());
             m_trayIcon->setContextMenu(m_trayMenu);
