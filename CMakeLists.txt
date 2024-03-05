@@ -71,7 +71,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt::Core
     Qt::DBus
     Qt::Widgets
-    StatusNotifierItemQt5
+    StatusNotifierItemQt${QT_VERSION_MAJOR}
 )
 set(PROJECT_DATA_DIR "${CMAKE_INSTALL_FULL_DATADIR}/${PROJECT_ID}")
 
