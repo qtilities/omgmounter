@@ -34,6 +34,16 @@ cmake --build build --verbose
 DESTDIR="$(pwd)/package" cmake --install build
 ```
 
+## Packages
+
+[![Packaging status]](https://repology.org/project/omgmounter/versions)
+
+## Translations
+
+For contributing translations the [LXQt Weblate] platform can be used.
+
+[![Translation status]](https://translate.lxqt-project.org/widgets/qtilities/)
+
 ## Licenses
 
 - Licensed under the [GPL-3.0-only] license.
@@ -41,7 +51,11 @@ DESTDIR="$(pwd)/package" cmake --install build
 
 [alternative]:          https://wiki.archlinux.org/title/CMake_package_guidelines#Fixing_the_automatic_optimization_flag_override
 [CDEmu]:                https://cdemu.sourceforge.net/
-[CI]:                   https://github.com/qtilities/sqeleton/actions/workflows/build.yml/badge.svg
+[CI]:                   https://github.com/qtilities/omgmounter/actions/workflows/build.yml/badge.svg
 [GPL-3.0-only]:         COPYING
+[KDE CDEmu Manager]:    https://sourceforge.net/projects/kde-cdemu-manager/
+[LXQt Weblate]:         https://translate.lxqt-project.org/projects/qtilities/omgmounter/
+[Packaging status]:     https://repology.org/badge/vertical-allrepos/omgmounter.svg
 [Qtilitools]:           https://github.com/qtilities/qtilitools/
 [StatusNotifierItemQt]: https://github.com/qtilities/libstatusnotifieritem-qt/
+[Translation status]:   https://translate.lxqt-project.org/widgets/qtilities/-/omgmounter/multi-auto.svg
