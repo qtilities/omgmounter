@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    SPDX-FileCopyrightText:  2012-2020 Marcel Hasler, 2024 Qtilities team
-    SPDX-License-Identifier: GPL-3.0-only
-
-    This file is part of OMGMounter application.
-    Authors:
-        Marcel Hasler    <mahasler@gmail.com> as KDE CDEmu Manager
-        Andrea Zanellato <redtide@gmail.com>
-    Translators:
-        Maciej Warnecki <maciekw5@gmail.com>, 2013.
-        Google Translate, 2024.
--->
 <!DOCTYPE TS>
 <TS version="2.1" language="pl">
 <context>
@@ -82,7 +70,7 @@
     <message>
         <location filename="../../src/mainwindow.cpp" line="54"/>
         <source>&amp;About...</source>
-        <translation>O</translation>
+        <translation>&amp;Informacje...</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="130"/>
