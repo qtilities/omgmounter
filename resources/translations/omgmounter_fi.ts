@@ -6,12 +6,12 @@
     <message>
         <location filename="../../src/devicelistitem.cpp" line="40"/>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse levykuva</translation>
     </message>
     <message>
         <location filename="../../src/devicelistitem.cpp" line="43"/>
         <source>Unmount current image</source>
-        <translation type="unfinished"></translation>
+        <translation>Irrota nykyinen levykuva</translation>
     </message>
 </context>
 <context>
@@ -19,43 +19,43 @@
     <message>
         <location filename="../../src/mainwindow.ui" line="55"/>
         <source>Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Laite</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="60"/>
         <source>Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Levykuva</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="83"/>
         <source>Add Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää laite</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="90"/>
         <source>Remove Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista laite</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="111"/>
         <source>Fi&amp;le</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tiedosto</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="116"/>
         <source>His&amp;tory</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Historia</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="121"/>
         <source>Setti&amp;ngs</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Asetukset</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="131"/>
         <location filename="../../src/mainwindow.cpp" line="47"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lopeta</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="142"/>
@@ -65,32 +65,32 @@
     <message>
         <location filename="../../src/mainwindow.cpp" line="51"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ohje</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="54"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tietoja...</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="130"/>
         <source>CDEmu daemon is running.</source>
-        <translation type="unfinished"></translation>
+        <translation>CDEmu-palvelu on käynnissä.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="132"/>
         <source>CDEmu daemon not running.</source>
-        <translation type="unfinished"></translation>
+        <translation>CDEmu-palvelu ei ole käynnissä.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="173"/>
         <source>Select an image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse levykuva</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="324"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjennä historia</translation>
     </message>
 </context>
 <context>
@@ -98,32 +98,32 @@
     <message>
         <location filename="../../src/exception.cpp" line="27"/>
         <source>The selected virtual device is in use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valittu virtuaalilaite on käytössä.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="28"/>
         <source>The selected virtual device is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valittua virtuaalilaitetta ei ole saatavilla.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="29"/>
         <source>All virtual devices are in use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki virtuaalilaitteet ovat käytössä.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="30"/>
         <source>The file doesn&apos;t exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedostoa ei ole olemassa.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="31"/>
         <source>Unable to connect to the CDEmu daemon.</source>
-        <translation type="unfinished"></translation>
+        <translation>CDEmu-palveluun ei saada yhteyttä.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="32"/>
         <source>An unknown error occured.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuntematon virhe tapahtui.</translation>
     </message>
 </context>
 <context>
@@ -131,27 +131,27 @@
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>Mount an image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiinnitä levykuva.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>tiedosto</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>Unmount an image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Irrota levykuva.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>device number</source>
-        <translation type="unfinished"></translation>
+        <translation>laitenumero</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="78"/>
         <source>Show information about devices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä tietoja laitteista.</translation>
     </message>
 </context>
 <context>
@@ -159,27 +159,27 @@
     <message>
         <location filename="../../src/dialogabout.ui" line="27"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tiedot</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="76"/>
         <source>Thanks</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiitokset</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="128"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisenssi</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.cpp" line="55"/>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekijä</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.cpp" line="60"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja</translation>
     </message>
 </context>
 </TS>
