@@ -60,7 +60,7 @@
     <message>
         <location filename="../../src/mainwindow.ui" line="142"/>
         <source>Show in System Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä ilmaisualueella</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="51"/>
