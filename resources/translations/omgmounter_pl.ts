@@ -90,7 +90,7 @@
     <message>
         <location filename="../../src/mainwindow.cpp" line="324"/>
         <source>Clear History</source>
-        <translation>Usuwać Chronologia</translation>
+        <translation>Wyczyść historię</translation>
     </message>
 </context>
 <context>
@@ -159,12 +159,12 @@
     <message>
         <location filename="../../src/dialogabout.ui" line="27"/>
         <source>Information</source>
-        <translation>Informacja</translation>
+        <translation>Informacje</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="76"/>
         <source>Thanks</source>
-        <translation>Dzięki</translation>
+        <translation>Podziękowania</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="128"/>
@@ -179,7 +179,7 @@
     <message>
         <location filename="../../src/dialogabout.cpp" line="60"/>
         <source>About</source>
-        <translation>O</translation>
+        <translation>Informacje</translation>
     </message>
 </context>
 </TS>
