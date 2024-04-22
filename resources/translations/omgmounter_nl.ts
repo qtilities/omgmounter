@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="nl">
 <context>
     <name>DeviceListItem</name>
     <message>
         <location filename="../../src/devicelistitem.cpp" line="40"/>
         <source>Select image file</source>
-        <translation>Abbilddatei auswählen</translation>
+        <translation>Kies een schijfkopiebestand</translation>
     </message>
     <message>
         <location filename="../../src/devicelistitem.cpp" line="43"/>
         <source>Unmount current image</source>
-        <translation>Aktuelles Abbild aushängen</translation>
+        <translation>Huidige schijfkopie afkoppelen</translation>
     </message>
 </context>
 <context>
@@ -19,78 +19,78 @@
     <message>
         <location filename="../../src/mainwindow.ui" line="55"/>
         <source>Device</source>
-        <translation>Gerät</translation>
+        <translation>Apparaat</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="60"/>
         <source>Image</source>
-        <translation>Abbild</translation>
+        <translation>Schijfkopie</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="83"/>
         <source>Add Device</source>
-        <translation>Gerät hinzufügen</translation>
+        <translation>Apparaat toevoegen</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="90"/>
         <source>Remove Device</source>
-        <translation>Gerät entfernen</translation>
+        <translation>Apparaat verwijderen</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="111"/>
         <source>Fi&amp;le</source>
-        <translation>Datei</translation>
+        <translation>Bes&amp;tand</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="116"/>
         <source>His&amp;tory</source>
-        <translation>Chronik</translation>
+        <translation>Geschie&amp;denis</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="121"/>
         <source>Setti&amp;ngs</source>
-        <translation>Einstellungen</translation>
+        <translation>Instelli&amp;ngen</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="131"/>
         <location filename="../../src/mainwindow.cpp" line="47"/>
         <source>&amp;Quit</source>
-        <translation>Beenden</translation>
+        <translation>&amp;Afsluiten</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="142"/>
         <source>Show in System Tray</source>
-        <translation>Im Systembereich anzeigen</translation>
+        <translation>Systeemvakpictogram tonen</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="51"/>
         <source>&amp;Help</source>
-        <translation>&amp;Hilfe</translation>
+        <translation>&amp;Hulp</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="54"/>
         <source>&amp;About...</source>
-        <translation>Über</translation>
+        <translation>&amp;Over…</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="130"/>
         <source>CDEmu daemon is running.</source>
-        <translation>CDEmu-Daemon läuft.</translation>
+        <translation>De CDEmu-achtergronddienst is actief.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="132"/>
         <source>CDEmu daemon not running.</source>
-        <translation>CDEmu-Daemon läuft nicht.</translation>
+        <translation>De CDEmu-achtergronddienst is niet actief.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="173"/>
         <source>Select an image file</source>
-        <translation>Abbilddatei auswählen</translation>
+        <translation>Kies een schijfkopiebestand</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="324"/>
         <source>Clear History</source>
-        <translation>Chronik löschen</translation>
+        <translation>Geschiedenis wissen</translation>
     </message>
 </context>
 <context>
@@ -98,32 +98,32 @@
     <message>
         <location filename="../../src/exception.cpp" line="27"/>
         <source>The selected virtual device is in use.</source>
-        <translation>Das ausgewählte virtuelle Gerät ist belegt.</translation>
+        <translation>Het gekozen virtuele apparaat is in gebruik.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="28"/>
         <source>The selected virtual device is not available.</source>
-        <translation>Das ausgewählte virtuelle Gerät ist nicht verfügbar.</translation>
+        <translation>Het gekozen virtuele apparaat is niet beschikbaar.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="29"/>
         <source>All virtual devices are in use.</source>
-        <translation>Alle virtuellen Geräte sind belegt.</translation>
+        <translation>Alle virtuele apparaten zijn in gebruik.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="30"/>
         <source>The file doesn&apos;t exist.</source>
-        <translation>Die Datei existiert nicht.</translation>
+        <translation>Dit bestand bestaat niet.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="31"/>
         <source>Unable to connect to the CDEmu daemon.</source>
-        <translation>Es kann keine Verbindung zum CDEmu-Daemon hergestellt werden.</translation>
+        <translation>Er kan geen verbinding met CDEmu-achtergronddienst worden gemaakt.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="32"/>
-        <source>An unknown error occurred.</source>
-        <translation>Ein unbekannter Fehler ist aufgetreten.</translation>
+        <source>An unknown error occured.</source>
+        <translation>Er is een onbekende fout opgetreden.</translation>
     </message>
 </context>
 <context>
@@ -131,27 +131,27 @@
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>Mount an image.</source>
-        <translation>Ein Abbild einbinden.</translation>
+        <translation>Koppel een schijfkopie aan.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>file</source>
-        <translation>Datei</translation>
+        <translation>bestand</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>Unmount an image.</source>
-        <translation>Ein Abbild einbinden.</translation>
+        <translation>Koppel een schijfkopie af.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>device number</source>
-        <translation>Gerätenummer</translation>
+        <translation>apparaatnummer</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="78"/>
         <source>Show information about devices.</source>
-        <translation>Informationen über Geräte anzeigen.</translation>
+        <translation>Toon informatie over apparaten.</translation>
     </message>
 </context>
 <context>
@@ -159,27 +159,27 @@
     <message>
         <location filename="../../src/dialogabout.ui" line="27"/>
         <source>Information</source>
-        <translation>Information</translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="76"/>
         <source>Thanks</source>
-        <translation>Danke</translation>
+        <translation>Met dank aan</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="128"/>
         <source>License</source>
-        <translation>Lizenz</translation>
+        <translation>Licentie</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.cpp" line="55"/>
         <source>Author</source>
-        <translation>Autor</translation>
+        <translation>Maker</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.cpp" line="60"/>
         <source>About</source>
-        <translation>Über</translation>
+        <translation>Over</translation>
     </message>
 </context>
 </TS>
