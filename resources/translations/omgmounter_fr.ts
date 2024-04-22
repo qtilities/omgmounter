@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    SPDX-FileCopyrightText:  2012-2020 Marcel Hasler, 2024 Qtilities team
-    SPDX-License-Identifier: GPL-3.0-only
-
-    This file is part of OMGMounter application.
-    Authors:
-        Marcel Hasler    <mahasler@gmail.com> as KDE CDEmu Manager
-        Andrea Zanellato <redtide@gmail.com>
-    Translator:
-        David Geiger <david.david@mageialinux-online.org>, 2016.
--->
 <!DOCTYPE TS>
 <TS version="2.1" language="fr">
 <context>
@@ -22,7 +11,7 @@
     <message>
         <location filename="../../src/devicelistitem.cpp" line="43"/>
         <source>Unmount current image</source>
-        <translation>Démonter l'image actuelle</translation>
+        <translation>Démonter l&apos;image actuelle</translation>
     </message>
 </context>
 <context>
@@ -76,22 +65,22 @@
     <message>
         <location filename="../../src/mainwindow.cpp" line="51"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Aide</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="54"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>À &amp;propos...</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="130"/>
         <source>CDEmu daemon is running.</source>
-        <translation>Le démon CDEmu est en cours d'exécution.</translation>
+        <translation>Le démon CDEmu est en cours d&apos;exécution.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="132"/>
         <source>CDEmu daemon not running.</source>
-        <translation>Le démon CDEmu n'est pas en cours d'exécution.</translation>
+        <translation>Le démon CDEmu n&apos;est pas en cours d&apos;exécution.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="173"/>
@@ -101,7 +90,7 @@
     <message>
         <location filename="../../src/mainwindow.cpp" line="324"/>
         <source>Clear History</source>
-        <translation>Effacer l'historique</translation>
+        <translation>Effacer l&apos;historique</translation>
     </message>
 </context>
 <context>
@@ -109,17 +98,17 @@
     <message>
         <location filename="../../src/exception.cpp" line="27"/>
         <source>The selected virtual device is in use.</source>
-        <translation>Le périphérique virtuel sélectionné est en cours d'utilisation.</translation>
+        <translation>Le périphérique virtuel sélectionné est en cours d&apos;utilisation.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="28"/>
         <source>The selected virtual device is not available.</source>
-        <translation>Le périphérique virtuel sélectionné n'est pas disponible.</translation>
+        <translation>Le périphérique virtuel sélectionné n&apos;est pas disponible.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="29"/>
         <source>All virtual devices are in use.</source>
-        <translation>Tous les périphérique virtuels sont en cours d'utilisation.</translation>
+        <translation>Tous les périphérique virtuels sont en cours d&apos;utilisation.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="30"/>
