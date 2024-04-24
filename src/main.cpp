@@ -104,6 +104,7 @@ auto main(int argc, char* argv[]) -> int
     app.setOrganizationName(ORGANIZATION_NAME);
     app.setOrganizationDomain(ORGANIZATION_DOMAIN);
     app.setApplicationVersion(APPLICATION_VERSION);
+    app.setDesktopFileName(PROJECT_APPSTREAM_ID);
 
     QTranslator qtTranslator, translator;
     initLocale(&qtTranslator, &translator);
