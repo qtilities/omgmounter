@@ -6,12 +6,12 @@
     <message>
         <location filename="../../src/devicelistitem.cpp" line="40"/>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu un fitxer d&apos;imatge</translation>
     </message>
     <message>
         <location filename="../../src/devicelistitem.cpp" line="43"/>
         <source>Unmount current image</source>
-        <translation type="unfinished"></translation>
+        <translation>Desmunta la imatge actual</translation>
     </message>
 </context>
 <context>
@@ -19,48 +19,48 @@
     <message>
         <location filename="../../src/mainwindow.ui" line="55"/>
         <source>Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositiu</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="60"/>
         <source>Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Imatge</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="83"/>
         <source>Add Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix un dispositiu</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="90"/>
         <source>Remove Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Suprimeix el dispositiu</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="111"/>
         <source>Fi&amp;le</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Fitxer</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="116"/>
         <source>His&amp;tory</source>
-        <translation type="unfinished"></translation>
+        <translation>His&amp;torial</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="121"/>
         <source>Setti&amp;ngs</source>
-        <translation type="unfinished"></translation>
+        <translation>Conf&amp;iguració</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="131"/>
         <location filename="../../src/mainwindow.cpp" line="47"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Surt</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="142"/>
         <source>Show in System Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra a la safata del sistema</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="51"/>
@@ -159,27 +159,27 @@
     <message>
         <location filename="../../src/dialogabout.ui" line="27"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informació</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="76"/>
         <source>Thanks</source>
-        <translation type="unfinished"></translation>
+        <translation>Mercès</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="128"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Llicència</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.cpp" line="55"/>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>Autor</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.cpp" line="60"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Quant a</translation>
     </message>
 </context>
 </TS>
