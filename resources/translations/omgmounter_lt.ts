@@ -49,7 +49,7 @@
     <message>
         <location filename="../../src/mainwindow.ui" line="121"/>
         <source>Setti&amp;ngs</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nustatymai</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="131"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>Mount an image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prijunkite atvaizdį.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72"/>
@@ -141,7 +141,7 @@
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>Unmount an image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atjunkite atvaizdį.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
