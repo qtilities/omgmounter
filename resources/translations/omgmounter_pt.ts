@@ -55,7 +55,7 @@
         <location filename="../../src/mainwindow.ui" line="131"/>
         <location filename="../../src/mainwindow.cpp" line="47"/>
         <source>&amp;Quit</source>
-        <translation>&amp;sair</translation>
+        <translation>&amp;Sair</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="142"/>
