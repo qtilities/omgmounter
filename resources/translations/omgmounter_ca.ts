@@ -65,32 +65,32 @@
     <message>
         <location filename="../../src/mainwindow.cpp" line="51"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ajuda</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="54"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Quant a...</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="130"/>
         <source>CDEmu daemon is running.</source>
-        <translation type="unfinished"></translation>
+        <translation>El dimoni CDEmu s&apos;executa.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="132"/>
         <source>CDEmu daemon not running.</source>
-        <translation type="unfinished"></translation>
+        <translation>El dimoni CDEmu no s&apos;executa.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="173"/>
         <source>Select an image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu un fitxer d&apos;imatge</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="324"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Neteja l&apos;historial</translation>
     </message>
 </context>
 <context>
@@ -98,32 +98,32 @@
     <message>
         <location filename="../../src/exception.cpp" line="27"/>
         <source>The selected virtual device is in use.</source>
-        <translation type="unfinished"></translation>
+        <translation>El dispositiu virtual seleccionat està en ús.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="28"/>
         <source>The selected virtual device is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>El dispositiu virtual seleccionat no està disponible.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="29"/>
         <source>All virtual devices are in use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tots els dispositius virtuals estan en ús.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="30"/>
         <source>The file doesn&apos;t exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>El fitxer no existeix.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="31"/>
         <source>Unable to connect to the CDEmu daemon.</source>
-        <translation type="unfinished"></translation>
+        <translation>No es pot connectar amb el dimoni CDEmu.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="32"/>
         <source>An unknown error occured.</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;ha produït un error desconegut.</translation>
     </message>
 </context>
 <context>
@@ -131,27 +131,27 @@
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>Mount an image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Munta una imatge.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>fitxer</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>Unmount an image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desmunta una imatge.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>device number</source>
-        <translation type="unfinished"></translation>
+        <translation>número del dispositiu</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="78"/>
         <source>Show information about devices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra informació sobre els dispositius.</translation>
     </message>
 </context>
 <context>

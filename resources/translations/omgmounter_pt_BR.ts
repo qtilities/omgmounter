@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_TW">
+<TS version="2.1" language="pt_BR">
 <context>
     <name>DeviceListItem</name>
     <message>
         <location filename="../../src/devicelistitem.cpp" line="40"/>
         <source>Select image file</source>
-        <translation>選取映像檔案</translation>
+        <translation>Selecionar arquivo de imagem</translation>
     </message>
     <message>
         <location filename="../../src/devicelistitem.cpp" line="43"/>
         <source>Unmount current image</source>
-        <translation>卸載目前的映像檔案</translation>
+        <translation>Desmontar imagem atual</translation>
     </message>
 </context>
 <context>
@@ -19,78 +19,78 @@
     <message>
         <location filename="../../src/mainwindow.ui" line="55"/>
         <source>Device</source>
-        <translation>裝置</translation>
+        <translation>Dispositivo</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="60"/>
         <source>Image</source>
-        <translation>映像檔案</translation>
+        <translation>Imagem</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="83"/>
         <source>Add Device</source>
-        <translation>新增裝置</translation>
+        <translation>Adicionar dispositivo</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="90"/>
         <source>Remove Device</source>
-        <translation>移除裝置</translation>
+        <translation>Remover dispositivo</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="111"/>
         <source>Fi&amp;le</source>
-        <translation>檔案(&amp;L)</translation>
+        <translation>&amp;Arquivo</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="116"/>
         <source>His&amp;tory</source>
-        <translation>歷史紀錄(&amp;T)</translation>
+        <translation>&amp;Histórico</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="121"/>
         <source>Setti&amp;ngs</source>
-        <translation>設定(&amp;N)</translation>
+        <translation>&amp;Configurações</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="131"/>
         <location filename="../../src/mainwindow.cpp" line="47"/>
         <source>&amp;Quit</source>
-        <translation>離開(&amp;Q)</translation>
+        <translation>&amp;Sair</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.ui" line="142"/>
         <source>Show in System Tray</source>
-        <translation>在系統匣顯示</translation>
+        <translation>Mostrar na área de notificação</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="51"/>
         <source>&amp;Help</source>
-        <translation>說明(&amp;H)</translation>
+        <translation>A&amp;juda</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="54"/>
         <source>&amp;About...</source>
-        <translation>關於(&amp;A)…</translation>
+        <translation>&amp;Sobre...</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="130"/>
         <source>CDEmu daemon is running.</source>
-        <translation>CDEmu 背景程式已執行。</translation>
+        <translation>O daemon CDEmu está em execução.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="132"/>
         <source>CDEmu daemon not running.</source>
-        <translation>CDEmu 背景程式未執行。</translation>
+        <translation>O daemon CDEmu não está em execução.</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="173"/>
         <source>Select an image file</source>
-        <translation>選擇一個映像檔案</translation>
+        <translation>Selecionar um arquivo de imagem</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="324"/>
         <source>Clear History</source>
-        <translation>清除歷史紀錄</translation>
+        <translation>Limpar histórico</translation>
     </message>
 </context>
 <context>
@@ -98,32 +98,32 @@
     <message>
         <location filename="../../src/exception.cpp" line="27"/>
         <source>The selected virtual device is in use.</source>
-        <translation>選取的虛擬裝置正在使用中。</translation>
+        <translation>O dispositivo virtual selecionado está em uso.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="28"/>
         <source>The selected virtual device is not available.</source>
-        <translation>選取的虛擬裝置無法使用。</translation>
+        <translation>O dispositivo virtual selecionado não está disponível.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="29"/>
         <source>All virtual devices are in use.</source>
-        <translation>全部的虛擬裝置皆在使用中。</translation>
+        <translation>Todos os dispositivos virtuais estão em uso.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="30"/>
         <source>The file doesn&apos;t exist.</source>
-        <translation>檔案不存在。</translation>
+        <translation>O arquivo não existe.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="31"/>
         <source>Unable to connect to the CDEmu daemon.</source>
-        <translation>無法連接到 CDEmu 背景程式。</translation>
+        <translation>Não é possível conectar-se ao daemon CDEmu.</translation>
     </message>
     <message>
         <location filename="../../src/exception.cpp" line="32"/>
-        <source>An unknown error occurred.</source>
-        <translation>出現不明的錯誤。</translation>
+        <source>An unknown error occured.</source>
+        <translation>Ocorreu um erro desconhecido.</translation>
     </message>
 </context>
 <context>
@@ -131,27 +131,27 @@
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>Mount an image.</source>
-        <translation>掛載一個映像檔案。</translation>
+        <translation>Montar uma imagem.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="72"/>
         <source>file</source>
-        <translation>檔案</translation>
+        <translation>arquivo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>Unmount an image.</source>
-        <translation>卸載一個映像檔案。</translation>
+        <translation>Desmontar uma imagem.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="75"/>
         <source>device number</source>
-        <translation>裝置編號</translation>
+        <translation>número do dispositivo</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="78"/>
         <source>Show information about devices.</source>
-        <translation>顯示裝置資訊。</translation>
+        <translation>Mostrar informações sobre dispositivos.</translation>
     </message>
 </context>
 <context>
@@ -159,27 +159,27 @@
     <message>
         <location filename="../../src/dialogabout.ui" line="27"/>
         <source>Information</source>
-        <translation>資訊</translation>
+        <translation>Informação</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="76"/>
         <source>Thanks</source>
-        <translation>感謝</translation>
+        <translation>Agradecimentos</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.ui" line="128"/>
         <source>License</source>
-        <translation>授權</translation>
+        <translation>Licença</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.cpp" line="55"/>
         <source>Author</source>
-        <translation>作者</translation>
+        <translation>Autor</translation>
     </message>
     <message>
         <location filename="../../src/dialogabout.cpp" line="60"/>
         <source>About</source>
-        <translation>關於</translation>
+        <translation>Sobre</translation>
     </message>
 </context>
 </TS>
